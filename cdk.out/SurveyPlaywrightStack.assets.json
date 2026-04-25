@@ -1,0 +1,48 @@
+{
+  "version": "50.0.0",
+  "files": {
+    "80942888b4bf815d6eb9abb7787360cd2eb1e264b442fe0ec4badf13161e6c9a": {
+      "displayName": "ApiLambda/Code",
+      "source": {
+        "path": "asset.80942888b4bf815d6eb9abb7787360cd2eb1e264b442fe0ec4badf13161e6c9a",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "current_account-current_region-be12b8ff": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "80942888b4bf815d6eb9abb7787360cd2eb1e264b442fe0ec4badf13161e6c9a.zip",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    },
+    "ea39466e6d0d5cdb16bf956882ffa6e6b4623d831bd3580649ade3655bfd6e1c": {
+      "displayName": "SurveyPlaywrightStack Template",
+      "source": {
+        "path": "SurveyPlaywrightStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region-c06a8964": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "ea39466e6d0d5cdb16bf956882ffa6e6b4623d831bd3580649ade3655bfd6e1c.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {
+    "84fc9d28e6609833d0d623aea0c939c38f75e0393e6fe02ff6fff7042a81b14e": {
+      "displayName": "WorkerLambda/AssetImage",
+      "source": {
+        "directory": "asset.84fc9d28e6609833d0d623aea0c939c38f75e0393e6fe02ff6fff7042a81b14e"
+      },
+      "destinations": {
+        "current_account-current_region-89df2858": {
+          "repositoryName": "cdk-hnb659fds-container-assets-${AWS::AccountId}-${AWS::Region}",
+          "imageTag": "84fc9d28e6609833d0d623aea0c939c38f75e0393e6fe02ff6fff7042a81b14e",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-image-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  }
+}
