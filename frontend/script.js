@@ -1,3 +1,6 @@
+const API_URL =
+    "https://mxo48732xl.execute-api.us-east-1.amazonaws.com/prod/start";
+
 let surveyUrl = null;
 
 const statusEl = document.getElementById("status");
@@ -29,7 +32,8 @@ Html5Qrcode.getCameras()
         }
     })
     .catch(err => {
-        statusEl.textContent = err;
+        console.error(err);
+        statusEl.textContent = "Camera error: " + err;
     });
 
 document
@@ -37,7 +41,7 @@ document
     .addEventListener("click", async () => {
 
         const email =
-            document.getElementById("email").value;
+            document.getElementById("email").value.trim();
 
         if (!email) {
             alert("Please enter an email.");
@@ -49,36 +53,41 @@ document
             return;
         }
 
-        statusEl.textContent = "Submitting...";
+        statusEl.textContent = "Submitting survey...";
 
         try {
 
             const response = await fetch(
-                "YOUR_LAMBDA_FUNCTION_URL",
+                API_URL,
                 {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
-                        email,
-                        survey_url: surveyUrl
+                        email: email,
+                        link: surveyUrl
                     })
                 }
             );
 
             const result = await response.json();
 
-            statusEl.textContent =
-                "Survey submitted successfully.";
-
             console.log(result);
+
+            if (response.ok) {
+                statusEl.textContent =
+                    "Survey submitted successfully.";
+            } else {
+                statusEl.textContent =
+                    "Submission failed.";
+            }
 
         } catch (error) {
 
             console.error(error);
 
             statusEl.textContent =
-                "Failed to submit survey.";
+                "Network error. Check browser console.";
         }
     });
