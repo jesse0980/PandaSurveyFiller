@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Panda Survey Scanner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Panda Survey Scanner</h1>
+
+    <input
+        type="email"
+        id="email"
+        placeholder="Enter your email"
+    >
+
+    <div id="reader"></div>
+
+    <p>
+        Survey URL:
+        <span id="surveyUrl">Not scanned yet</span>
+    </p>
+
+    <button id="submitBtn">
+        Submit Survey
+    </button>
+
+    <p id="status"></p>
+</div>
+
+<script src="https://unpkg.com/html5-qrcode"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
