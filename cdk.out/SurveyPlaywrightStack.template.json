@@ -39,7 +39,7 @@
    "Properties": {
     "Code": {
      "ImageUri": {
-      "Fn::Sub": "${AWS::AccountId}.dkr.ecr.${AWS::Region}.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-${AWS::AccountId}-${AWS::Region}:6a9f9de56cf59468f6b7a498d22cfe91c8097e22e5f8a232d06c929bb3442cfa"
+      "Fn::Sub": "${AWS::AccountId}.dkr.ecr.${AWS::Region}.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-${AWS::AccountId}-${AWS::Region}:db52b66ba48c1c3638492310058b55366de4216be0781933514a926a1f7dd17d"
      }
     },
     "MemorySize": 2048,
@@ -57,7 +57,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "SurveyPlaywrightStack/WorkerLambda/Resource",
-    "aws:asset:path": "asset.6a9f9de56cf59468f6b7a498d22cfe91c8097e22e5f8a232d06c929bb3442cfa",
+    "aws:asset:path": "asset.db52b66ba48c1c3638492310058b55366de4216be0781933514a926a1f7dd17d",
     "aws:asset:dockerfile-path": "Dockerfile",
     "aws:asset:property": "Code.ImageUri"
    }
@@ -148,7 +148,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "d92d7ce2fb199d6344978cea45e9c48b90cdbdc1bc647137eb7fbd93aeac211c.zip"
+     "S3Key": "45b1fb00610d30eb12469fbc067cedefdde0cec150e05b827d93637e96a0f9b7.zip"
     },
     "Environment": {
      "Variables": {
@@ -173,7 +173,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "SurveyPlaywrightStack/ApiLambda/Resource",
-    "aws:asset:path": "asset.d92d7ce2fb199d6344978cea45e9c48b90cdbdc1bc647137eb7fbd93aeac211c",
+    "aws:asset:path": "asset.45b1fb00610d30eb12469fbc067cedefdde0cec150e05b827d93637e96a0f9b7",
     "aws:asset:is-bundled": false,
     "aws:asset:property": "Code"
    }

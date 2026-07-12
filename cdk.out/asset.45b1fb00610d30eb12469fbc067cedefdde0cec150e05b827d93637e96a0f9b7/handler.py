@@ -20,14 +20,7 @@ def handler(event, context):
         print("no link or no email returning 400...")
         return {
             "statusCode": 400,
-            "headers": {
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Headers": "*",
-                "Access-Control-Allow-Methods": "POST,OPTIONS"
-            },
-            "body": json.dumps({
-                "error": "Missing email or link"
-            })
+            "body": json.dumps({"error": "Missing email or link"})
         }
 
     # async invoke worker
@@ -42,12 +35,5 @@ def handler(event, context):
 
     return {
         "statusCode": 200,
-        "headers": {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "*",
-            "Access-Control-Allow-Methods": "POST,OPTIONS"
-        },
-        "body": json.dumps({
-            "message": "accepted"
-        })
+        "body": json.dumps({"message": "accepted"})
     }

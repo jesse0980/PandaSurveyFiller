@@ -13,7 +13,6 @@ def handler(event, context):
         }
 
     with sync_playwright() as p:
-        print("launching the browser...")
         browser = p.chromium.launch(
             headless=True,
             args=[
