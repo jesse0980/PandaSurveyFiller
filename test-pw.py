@@ -2,11 +2,10 @@ from playwright.sync_api import sync_playwright
 import random
 import re
 email = "cooljesseguy2@gmail.com"
-link = "https://www.pandaguestexperience.com/?cn=2716-53768-2800-0015-0212-0106&source=QR25"
+link = "https://www.pandaguestexperience.com/?cn=2106-39230-2823-0018-0912-0201&source=QR25"
 
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=False)
-
     try:
         page = browser.new_page()
 
@@ -175,11 +174,9 @@ with sync_playwright() as p:
             next_btn.click()
             print("Clicked Next")
 
-        input("Press Enter to close...")
 
     except Exception as e:
         print("ERROR OCCURRED:", e)
-        input("Press Enter to inspect...")
 
     finally:
         browser.close()

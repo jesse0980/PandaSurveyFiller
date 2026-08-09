@@ -1,16 +1,20 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    background: #b37676;
     margin: 0;
-    padding: 40px;
+    padding-top: 90px;
 }
 
 .container {
-    max-width: 600px;
+    display: flex;
+    max-width: 700px;
     margin: auto;
     background: white;
     padding: 25px;
     border-radius: 10px;
+    align-items: center;
+    justify-content:center;
+    flex-direction:column;
 }
 
 h1 {
@@ -22,19 +26,35 @@ input {
     padding: 12px;
     margin-bottom: 20px;
     box-sizing: border-box;
+    font-size: xx-large;
 }
 
 #reader {
     width: 100%;
     margin-bottom: 20px;
+    max-width: 600px;
 }
 
 button {
     width: 100%;
     padding: 12px;
     cursor: pointer;
+    font-size: xx-large;
 }
 
 #status {
     margin-top: 20px;
+    color: yellow;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+.panda-image {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 75px;
+    background: none;
+    margin-right: 20px;
 }

@@ -14,15 +14,7 @@ def handler(event, context):
         }
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(
-                headless=True,
-                args=[
-                    "--no-sandbox",
-                    "--disable-setuid-sandbox",
-                    "--disable-dev-shm-usage",  # Crucial to prevent shared memory crashes in Docker
-                    "--single-process"          # Maximizes stability within Lambda limits
-                ]
-            )
+        browser = p.chromium.launch(headless=True)
 
         try:
             page = browser.new_page()
@@ -185,15 +177,6 @@ def handler(event, context):
 
                 if next_btn.count() == 0:
                     print("No Next button — survey complete")
-                    print("Waiting for final page...")
-                    page.wait_for_timeout(2000)
-
-                    page.wait_for_load_state("networkidle", timeout=10000)
-
-                    print("Final URL:", page.url)
-                    print("Final title:", page.title())
-
-                    print(page.locator("body").inner_text()[:1000])
                     break
 
                 page.wait_for_timeout(random.randint(200, 700))

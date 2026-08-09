@@ -13,6 +13,7 @@ function onScanSuccess(decodedText) {
 
     surveyUrlEl.textContent = decodedText;
 
+    // statusEl.style.color = "green";
     statusEl.textContent =
         "✓ QR code scanned! Press Submit to continue.";
 
@@ -110,11 +111,15 @@ document
 
                 statusEl.textContent =
                     "✓ Survey submitted successfully! You may now close this page.";
+                statusEl.style.color = "green";
+
 
             } else {
 
                 statusEl.textContent =
                     "Submission failed.";
+                statusEl.style.color = "red";
+
 
             }
 
@@ -124,6 +129,8 @@ document
 
             statusEl.textContent =
                 "Network error. Check browser console.";
+            statusEl.style.color = "red";
+
 
         }
 

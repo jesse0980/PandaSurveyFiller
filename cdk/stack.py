@@ -53,6 +53,10 @@ class SurveyPlaywrightStack(Stack):
                 allow_origins=apigw.Cors.ALL_ORIGINS,
                 allow_methods=apigw.Cors.ALL_METHODS,
             ),
+            deploy_options=apigw.StageOptions(
+                throttling_rate_limit=1,
+                throttling_burst_limit=2,
+            ),
         )
 
         # -------------------------
